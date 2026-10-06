@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Team Task Board</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>👥 Team Task Board</h1>
+        <p>Manage your team project together</p>
+    </div>
+
+    <button id="addTaskBtn">+ Add Task</button>
+</header>
+
+
+<main>
+
+    <!-- Statistics -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <h3>Total Tasks</h3>
+            <p id="totalTasks">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>To Do</h3>
+            <p id="todoTasks">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>In Progress</h3>
+            <p id="progressTasks">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Completed</h3>
+            <p id="completedTasks">0</p>
+        </div>
+
+    </section>
+
+
+    <!-- Search and Filter -->
+
+    <section class="toolbar">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search tasks..."
+        >
+
+        <select id="filterMember">
+
+            <option value="all">All Members</option>
+            <option value="Deeksha">Deeksha</option>
+            <option value="Rahul">Rahul</option>
+            <option value="Anu">Anu</option>
+            <option value="Arjun">Arjun</option>
+
+        </select>
+
+    </section>
+
+
+    <!-- Task Board -->
+
+    <section class="board">
+
+        <!-- To Do -->
+
+        <div class="column">
+
+            <div class="column-title">
+                <h2>To Do</h2>
+                <span id="todoCount">0</span>
+            </div>
+
+            <div id="todoList" class="task-list"></div>
+
+        </div>
+
+
+        <!-- In Progress -->
+
+        <div class="column">
+
+            <div class="column-title">
+                <h2>In Progress</h2>
+                <span id="progressCount">0</span>
+            </div>
+
+            <div id="progressList" class="task-list"></div>
+
+        </div>
+
+
+        <!-- Completed -->
+
+        <div class="column">
+
+            <div class="column-title">
+                <h2>Completed</h2>
+                <span id="completedCount">0</span>
+            </div>
+
+            <div id="completedList" class="task-list"></div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Add Task Popup -->
+
+<div id="taskModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Add New Task</h2>
+
+            <button id="closeModal">&times;</button>
+
+        </div>
+
+
+        <form id="taskForm">
+
+            <label>Task Title</label>
+
+            <input
+                type="text"
+                id="taskTitle"
+                placeholder="Enter task title"
+                required
+            >
+
+
+            <label>Assign To</label>
+
+            <select id="taskMember">
+
+                <option value="Deeksha">Deeksha</option>
+                <option value="Rahul">Rahul</option>
+                <option value="Anu">Anu</option>
+                <option value="Arjun">Arjun</option>
+
+            </select>
+
+
+            <label>Priority</label>
+
+            <select id="taskPriority">
+
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+
+            </select>
+
+
+            <label>Status</label>
+
+            <select id="taskStatus">
+
+                <option value="todo">To Do</option>
+                <option value="progress">In Progress</option>
+                <option value="completed">Completed</option>
+
+            </select>
+
+
+            <button type="submit" class="save-btn">
+                Add Task
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
